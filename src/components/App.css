@@ -8,16 +8,17 @@ body {
   flex-direction: column;
   align-items: center;
 }
-.App img {
+.App #img {
   user-select: none;
 }
-.App img:hover {
+.App #img:hover {
   animation: jello 2s infinite;
 }
 .App h1 code {
   color: white;
 }
-.App h1 {
+.App h1,
+.App p {
   text-align: center;
   user-select: none;
   color: rgb(0, 153, 255);
@@ -27,7 +28,9 @@ body {
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   animation: rainbow 5s infinite ease-in-out forwards;
 }
-
+.App p {
+  font-size: 2em !important;
+}
 @keyframes rainbow {
   from {
     filter: hue-rotate(0);

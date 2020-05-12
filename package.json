@@ -17,7 +17,10 @@
     "watcherGlob": "**"
   },
   "sw-precache": {
-    "navigateFallback": "/index.html"
+    "navigateFallback": "/",
+    "cacheId": "app-cache",
+    "skipWaiting": true,
+    "minify": true
   },
   "pwaManifest": {
     "name": "TeddyTags Sample App",
@@ -25,7 +28,7 @@
     "startURL": "./",
     "theme": "#000000",
     "generateIconOptions": {
-      "baseIcon": "./public/teddy.svg",
+      "baseIcon": "./public/logo.svg",
       "sizes": [
         192,
         384,
@@ -36,10 +39,9 @@
   },
   "devDependencies": {
     "@babel/core": "^7.9.6",
+    "@babel/plugin-transform-react-jsx": "^7.9.4",
     "@babel/plugin-transform-runtime": "^7.9.6",
     "@babel/preset-env": "^7.9.6",
-    "babel-core": "^6.26.3",
-    "babel-plugin-transform-react-jsx": "^6.24.1",
     "babel-preset-env": "^1.7.0",
     "core-js": "^3.6.5",
     "parcel-plugin-inlinesvg": "^0.1.1",
