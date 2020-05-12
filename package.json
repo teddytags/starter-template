@@ -16,7 +16,9 @@
     ],
     "watcherGlob": "**"
   },
-  "sw-precache": {},
+  "sw-precache": {
+    "navigateFallback": "/index.html"
+  },
   "pwaManifest": {
     "name": "TeddyTags Sample App",
     "shortName": "TeddyTags App",
