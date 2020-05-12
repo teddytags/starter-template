@@ -1,0 +1,55 @@
+{
+  "name": "teddytags-starter-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@babel/runtime-corejs3": "^7.9.6",
+    "parcel-bundler": "^1.12.4",
+    "teddytags": "^2.0.0",
+    "unfetch": "^4.1.0"
+  },
+  "staticFiles": {
+    "staticPath": [
+      "public",
+      "src/static"
+    ],
+    "watcherGlob": "**"
+  },
+  "sw-precache": {},
+  "pwaManifest": {
+    "name": "TeddyTags Sample App",
+    "shortName": "TeddyTags App",
+    "startURL": "./",
+    "theme": "#000000",
+    "generateIconOptions": {
+      "baseIcon": "./public/teddy.svg",
+      "sizes": [
+        192,
+        384,
+        512
+      ],
+      "genFavicons": true
+    }
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/plugin-transform-runtime": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
+    "babel-core": "^6.26.3",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-preset-env": "^1.7.0",
+    "core-js": "^3.6.5",
+    "parcel-plugin-inlinesvg": "^0.1.1",
+    "parcel-plugin-pwa-manifest": "^3.0.6",
+    "parcel-plugin-static-files-copy": "^2.3.1",
+    "parcel-plugin-sw-precache": "^1.1.2"
+  },
+  "scripts": {
+    "build": "parcel build src/index.html -d build --experimental-scope-hoisting",
+    "dev": "parcel src/index.html --port 1300"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
