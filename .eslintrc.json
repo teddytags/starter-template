@@ -13,7 +13,6 @@
       "modules": true
     }
   },
-  "plugins": ["babel"],
-  "extends": "eslint:recommended",
-  "rules": { "no-console": 1 }
+  "plugins": ["babel", "@teddytags"],
+  "extends": ["eslint:recommended", "plugin:@teddytags/recommended"]
 }
