@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "@babel/runtime-corejs3": "^7.9.6",
+    "core-js": "^3.6.5",
     "parcel-bundler": "^1.12.4",
     "teddytags": "^2.0.0",
     "unfetch": "^4.1.0"
@@ -23,18 +24,30 @@
     "minify": true
   },
   "pwaManifest": {
-    "name": "TeddyTags Sample App",
-    "shortName": "TeddyTags App",
-    "startURL": "./",
-    "theme": "#000000",
-    "generateIconOptions": {
-      "baseIcon": "./public/logo.svg",
-      "sizes": [
-        192,
-        384,
-        512
-      ],
-      "genFavicons": true
+    "production": {
+      "name": "TeddyTags Sample App",
+      "shortName": "TeddyTags App",
+      "startURL": "./",
+      "theme": "#000000",
+      "generateIconOptions": {
+        "baseIcon": "./public/logo.svg",
+        "sizes": [
+          192,
+          384,
+          512
+        ],
+        "genFavicons": true
+      }
+    },
+    "development": {
+      "name": "TeddyTags Sample App",
+      "shortName": "TeddyTags App",
+      "startURL": "./",
+      "theme": "#000000",
+      "generateIconOptions": {
+        "baseIcon": "./public/logo.svg",
+        "disabled": true
+      }
     }
   },
   "devDependencies": {
@@ -42,16 +55,20 @@
     "@babel/plugin-transform-react-jsx": "^7.9.4",
     "@babel/plugin-transform-runtime": "^7.9.6",
     "@babel/preset-env": "^7.9.6",
+    "babel-eslint": "^10.1.0",
     "babel-preset-env": "^1.7.0",
-    "core-js": "^3.6.5",
+    "eslint": "^7.0.0",
+    "eslint-plugin-babel": "^5.3.0",
+    "parcel-plugin-eslint": "^1.0.7",
     "parcel-plugin-inlinesvg": "^0.1.1",
     "parcel-plugin-pwa-manifest": "^3.0.6",
     "parcel-plugin-static-files-copy": "^2.3.1",
     "parcel-plugin-sw-precache": "^1.1.2"
   },
   "scripts": {
-    "build": "parcel build src/index.html -d build --experimental-scope-hoisting",
-    "dev": "parcel src/index.html --port 1300"
+    "build": "parcel build src/index.html -d build --experimental-scope-hoisting || node -e 'process.exit(0)'",
+    "dev": "parcel src/index.html --port 1300",
+    "lint": "eslint --ext .js,jsx,ts,tsx"
   },
   "keywords": [],
   "author": "",

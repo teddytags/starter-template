@@ -19,7 +19,7 @@ export const register = (swURL) => {
           console.log("Couldn't cache content." + e);
         });
     } else {
-      console.log("Not installing service worker, local env detected.");
+      console.log("Not installing service worker, localhost detected.");
     }
   }
 };
